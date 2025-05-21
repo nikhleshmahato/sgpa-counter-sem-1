@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Semester SGPA Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px; /* Ensures table doesn't get too narrow */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
+        }
+        input {
+            width: 100%;
+            max-width: 80px;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        button {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto;
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 12px;
+            background-color: #e9f7ef;
+            border-radius: 4px;
+        }
+        .note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 20px;
+            padding: 0 5px;
+        }
+        .note ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+            th, td {
+                padding: 6px;
+                font-size: 0.9rem;
+            }
+            input {
+                padding: 4px;
+                font-size: 0.9rem;
+            }
+            .result {
+                font-size: 1.1rem;
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+            .note {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I Semester SGPA Calculator</h1>
+        
+                <h1> this is not official, but Kaamchalauu !</h1>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code No.</th>
+                        <th>Name of the Subjects</th>
+                        <th>Credits</th>
+                        <th>Total Marks</th>
+                        <th>Obtained Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BT 101</td>
+                        <td>Engineering Mathematics-I</td>
+                        <td>4</td>
+                        <td>100</td>
+                        <td><input type="number" id="bt101" min="0" max="100" placeholder="0-100"></td>
+                    </tr>
+                    <tr>
+                        <td>BT 102</td>
+                        <td>Engineering Physics</td>
+                        <td>4</td>
+                        <td>100</td>
+                        <td><input type="number" id="bt102" min="0" max="100" placeholder="0-100"></td>
+                    </tr>
+                    <tr>
+                        <td>BT 103</td>
+                        <td>Programming in C</td>
+                        <td>4</td>
+                        <td>100</td>
+                        <td><input type="number" id="bt103" min="0" max="100" placeholder="0-100"></td>
+                    </tr>
+                    <tr>
+                        <td>BT 104</td>
+                        <td>Elements of Mechanical Engineering</td>
+                        <td>4</td>
+                        <td>100</td>
+                        <td><input type="number" id="bt104" min="0" max="100" placeholder="0-100"></td>
+                    </tr>
+                    <tr>
+                        <td>BT 105</td>
+                        <td>Basic of Electrical Engineering</td>
+                        <td>4</td>
+                        <td>100</td>
+                        <td><input type="number" id="bt105" min="0" max="100" placeholder="0-100"></td>
+                    </tr>
+                    <tr>
+                        <td>BT 106</td>
+                        <td>Professional Communication Skill</td>
+                        <td>3</td>
+                        <td>100</td>
+                        <td><input type="number" id="bt106" min="0" max="100" placeholder="0-100"></td>
+                    </tr>
+                    <tr>
+                        <td>BTC</td>
+                        <td>Engineering Physics Lab</td>
+                        <td>2</td>
+                        <td>50</td>
+                        <td><input type="number" id="btc1" min="0" max="50" placeholder="0-50"></td>
+                    </tr>
+                    <tr>
+                        <td>BTC</td>
+                        <td>Programming in C Lab</td>
+                        <td>2</td>
+                        <td>50</td>
+                        <td><input type="number" id="btc2" min="0" max="50" placeholder="0-50"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Total</td>
+                        <td>27</td>
+                        <td>600</td>
+                        <td id="total-obtained">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <button onclick="calculateSGPA()">Calculate SGPA</button>
+        
+        <div class="result" id="result">
+            Your SGPA will appear here
+        </div>
+        
+        <div class="note">
+            <p><strong>Note:</strong> SGPA is calculated based on the standard 10-point grading system:</p>
+            <ul>
+                <li>90-100: 10 points</li>
+                <li>80-89: 9 points</li>
+                <li>70-79: 8 points</li>
+                <li>60-69: 7 points</li>
+                <li>50-59: 6 points</li>
+                <li>40-49: 5 points</li>
+                <li>Below 40: 0 points (Fail)</li>
+            </ul>
+            <p>Lab marks (out of 50) are scaled to 100 for grade calculation.</p>
+        </div>
+    </div>
+  <script>
+        function calculateSGPA() {
+            // Get all input values
+            const bt101 = parseInt(document.getElementById('bt101').value) || 0;
+            const bt102 = parseInt(document.getElementById('bt102').value) || 0;
+            const bt103 = parseInt(document.getElementById('bt103').value) || 0;
+            const bt104 = parseInt(document.getElementById('bt104').value) || 0;
+            const bt105 = parseInt(document.getElementById('bt105').value) || 0;
+            const bt106 = parseInt(document.getElementById('bt106').value) || 0;
+            const btc1 = parseInt(document.getElementById('btc1').value) || 0;
+            const btc2 = parseInt(document.getElementById('btc2').value) || 0;
+            
+            // Calculate total obtained marks
+            const totalObtained = bt101 + bt102 + bt103 + bt104 + bt105 + bt106 + btc1 + btc2;
+            document.getElementById('total-obtained').textContent = totalObtained;
+            
+            // Calculate grade points for each subject (scaled for labs out of 50)
+            const gp101 = calculateGradePoint(bt101);
+            const gp102 = calculateGradePoint(bt102);
+            const gp103 = calculateGradePoint(bt103);
+            const gp104 = calculateGradePoint(bt104);
+            const gp105 = calculateGradePoint(bt105);
+            const gp106 = calculateGradePoint(bt106);
+            const gpc1 = calculateGradePoint(btc1 * 2); // Scale 50 to 100
+            const gpc2 = calculateGradePoint(btc2 * 2); // Scale 50 to 100
+            
+            // Calculate credit points (grade point × credit)
+            const cp101 = gp101 * 4;
+            const cp102 = gp102 * 4;
+            const cp103 = gp103 * 4;
+            const cp104 = gp104 * 4;
+            const cp105 = gp105 * 4;
+            const cp106 = gp106 * 3;
+            const cpc1 = gpc1 * 2;
+            const cpc2 = gpc2 * 2;
+            
+            // Total credit points and total credits
+            const totalCreditPoints = cp101 + cp102 + cp103 + cp104 + cp105 + cp106 + cpc1 + cpc2;
+            const totalCredits = 27; // Sum of all credits
+            
+            // Calculate SGPA
+            const sgpa = totalCreditPoints / totalCredits;
+            
+            // Display result
+            const resultDiv = document.getElementById('result');
+            if (isNaN(sgpa)) {
+                resultDiv.textContent = "Please enter valid marks for all subjects";
+                resultDiv.style.backgroundColor = "#ffdddd";
+            } else {
+                resultDiv.textContent = `Your SGPA is: ${sgpa.toFixed(2)}`;
+                resultDiv.style.backgroundColor = "#e9f7ef";
+            }
+        }
+        
+        function calculateGradePoint(marks) {
+            if (marks >= 90) return 10;
+            if (marks >= 80) return 9;
+            if (marks >= 70) return 8;
+            if (marks >= 60) return 7;
+            if (marks >= 50) return 6;
+            if (marks >= 40) return 5;
+            return 0; // Fail
+        }
+    </script>
+    </body>
+</html>
